@@ -1,0 +1,38 @@
+clc; clearvars; close all;
+
+%% Load image
+path = 'source/';
+image = 'img_03.jpg';
+
+figure(1)
+img1 = imread([path image]);
+img1 = imresize(img1,0.25);
+[sx, sy, sz] = size(img1);
+N = 4;
+data = uint8(zeros(sx*N, sy*N, sz));
+for i = 1:N
+    ix = 1 + (i-1)*sx : i*sx;
+    for j = 1:N
+        iy = 1 + (j-1)*sy : j*sy;
+        data(ix, iy, : ) = medfilt2(img1,i+j);
+    end
+end
+
+
+
+%% Treatement
+
+
+
+
+%% Display
+imshow(data);
+
+
+% for i = 1:sx*N
+%     for j = 1:sy*N
+%         x = mod(i-1,sx) + 1;
+%         y = mod(j-1,sy) + 1;
+%         data(i,j,:) = img1(x,y,:);
+%     end
+% end
