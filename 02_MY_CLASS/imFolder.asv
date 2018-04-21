@@ -15,10 +15,13 @@ classdef imFolder
                 obj.path = path_;
                 dr = dir(path_);
                 obj.diretory = dr(3:end);
-                obj.numberImage = numel(obj.diretory);
+                
             else
                 error('Folder not found');
             end
+            
+            
+            
         end
         
         function obj = set.numberImage(obj,num_)

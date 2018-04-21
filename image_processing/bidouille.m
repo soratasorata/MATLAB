@@ -1,3 +1,5 @@
 clc; clear all; close all;
 
-a = imFolder()
+source_path = 'Image/source/';
+b = imFolder(source_path);
+

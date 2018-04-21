@@ -1,0 +1,8 @@
+clc; clear all; close all;
+
+a = imFolder();
+b = imFolder('fd');
+% b.numberImage = 6
+source_path = 'Image/source/';
+dr = dir(source_path);
+dr = dr(3:end)
