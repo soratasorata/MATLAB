@@ -15,18 +15,21 @@ classdef imFolder
                 obj.path = path_;
                 dr = dir(path_);
                 obj.diretory = dr(3:end);
-                
+                obj.numberImage = numel(obj.diretory);
             else
                 error('Folder not found');
             end
-            
-            
-            
         end
         
         function obj = set.numberImage(obj,num_)
-            obj.numberImage = num_;
-            
+            obj.numberImage = num_;     
+        end
+        
+        function list(obj)
+            str = cell{obj.numberImage};
+            for i = 1:obj.numberImage
+                str(i) = obj.diretory(i).name;
+            end
         end
         
     end

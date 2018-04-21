@@ -6,6 +6,7 @@ classdef imFolder
         path
         numberImage
         diretory
+        image_name
         
     end
     
@@ -22,7 +23,14 @@ classdef imFolder
         end
         
         function obj = set.numberImage(obj,num_)
-            obj.numberImage = num_;
+            obj.numberImage = num_;     
+        end
+        
+        function obj = list(obj)
+            obj.image_name = cell(obj.numberImage,1);
+            for i = 1:obj.numberImage
+                obj.image_name{i} = obj.diretory(i).name;
+            end
             
         end
         
