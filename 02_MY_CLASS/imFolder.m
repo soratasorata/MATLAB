@@ -11,6 +11,8 @@ classdef imFolder
     methods
         function obj = init(path_)
             obj.path = path_;
+            
+            
         end
         
     end
